@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Toggle from "./components/ToggleRenderProps";
+import { ToggleHOCwithToggle } from "./components/ToggleHOC";
+import ToggleTipRenderProps from "./components/ToggleTipRenderProps";
+import { ToggleTipHOCwithToggle } from "./components/ToggleTipHOC";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div>
+      {/* Toggle con Render Props */}
+      <h2>Toggle con Render Props</h2>
+      <Toggle>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quia
+          iusto ad laborum, natus repudiandae quas, nobis aliquam explicabo
+          officia laudantium dignissimos eligendi iste placeat, asperiores cum
+          in cumque deleniti.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </Toggle>
+      <h2>Toggle con Hoc</h2>
+
+      <ToggleHOCwithToggle>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quia
+          iusto ad laborum, natus repudiandae quas, nobis aliquam explicabo
+          officia laudantium dignissimos eligendi iste placeat, asperiores cum
+          in cumque deleniti.
+        </p>
+      </ToggleHOCwithToggle>
+
+      <ToggleTipRenderProps>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+          expedita accusantium inventore officia eveniet repudiandae corrupti
+          maxime tempora voluptates illum sint veniam mollitia quibusdam ipsa
+          odit consequatur. Veniam, beatae doloribus?
+        </p>
+      </ToggleTipRenderProps>
+
+      <ToggleTipHOCwithToggle>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quia
+          iusto ad laborum, natus repudiandae quas, nobis aliquam explicabo
+          officia laudantium dignissimos eligendi iste placeat, asperiores cum
+          in cumque deleniti.
+        </p>
+      </ToggleTipHOCwithToggle>
+    </div>
+  );
 }
 
-export default App
+export default App;
